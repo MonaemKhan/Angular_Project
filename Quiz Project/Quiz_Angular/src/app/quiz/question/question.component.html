@@ -1,28 +1,26 @@
 <div *ngIf="!ShowDataEntry">
-    <div class="d-flex justify-content-center mt-5">
-        <div class="card w-75 p-3">
-            <div *ngIf="IsQuizPartShow">
-                <div class="row">
-                    <div class="col-md-6">
-                        <select #mySelect class="form-select" (change)="QuizIdNameSlect(mySelect)" id="selectQuiz">
-                            <option selected disabled>Select Quiz Name</option>
-                            <option *ngFor="let item of AllQuiz" value="{{item.quizId}}">{{item.quizName}}</option>
-                        </select>
-                    </div>
-                
-                    <div class="col-md-6 d-flex justify-content-end">
-                        <button class="btn btn-primary me-5" (click)="AddtoQuiz()">Add New Quiz Name</button>
-                    </div>
+    <div class="container my-5">
+        <div *ngIf="IsQuizPartShow">
+            <div class="row">
+                <div class="col-md-6">
+                    <select #mySelect class="form-select" (change)="QuizIdNameSlect(mySelect)" id="selectQuiz">
+                        <option selected disabled>Select Quiz Name</option>
+                        <option *ngFor="let item of AllQuiz" value="{{item.quizId}}">{{item.quizName}}</option>
+                    </select>
+                </div>
+
+                <div class="col-md-6 d-flex justify-content-end">
+                    <button class="btn btn-primary me-5" (click)="AddtoQuiz()">Add New Quiz Name</button>
                 </div>
             </div>
-            <div *ngIf="!IsQuizPartShow">
-                <div class="row">
-                    <div class="col-md-12">
-                        <label for="" class="form-label">Name of the Quiz</label>
-                        <input class="form-control mb-3" [(ngModel)]="_QuizName" />
-                        <button class="btn btn-warning me-3" (click)="BackofQuiz()">Back</button>
-                        <button class="btn btn-primary" (click)="AddQuiz()">Add Quiz Name</button>                
-                    </div>
+        </div>
+        <div *ngIf="!IsQuizPartShow">
+            <div class="row">
+                <div class="col-md-12">
+                    <label for="" class="form-label">Name of the Quiz</label>
+                    <input class="form-control mb-3" [(ngModel)]="_QuizName" />
+                    <button class="btn btn-warning me-3" (click)="BackofQuiz()">Select Quiz</button>
+                    <button class="btn btn-primary" (click)="AddQuiz()">Add Quiz Name</button>
                 </div>
             </div>
         </div>
@@ -30,93 +28,95 @@
 </div>
 
 <div *ngIf="ShowDataEntry">
-    <div class="d-flex justify-content-center mt-5">
-        <div class="card p-5">
-            <div class="row">
+    <div class="container my-5">
+        <div class="row">
+            <div>
+                <h3>Quiz Name Is : {{_QuizName}}</h3>
+            </div>
+            <form [formGroup]="QuestionForm">
                 <div>
-                    <h3>Quiz Name Is : {{_QuizName}}</h3>
+                    <input formControlName="QuestionId" hidden>
                 </div>
-                <form [formGroup]="QuestionForm">
-                    <div>
-                        <input formControlName="QuestionId" hidden>
-                    </div>
-                    <div class="col-md-12">
-                        <label class="form-label text-success">Question</label>
-                        <input type="text" class="form-control" formControlName="QuestionName">
-                    </div>
-                    <div class="col-md-12">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label class="form-label">Option 1</label>
-                                <input type="text" class="form-control" formControlName="Option1">
-                            </div>
-                            <div class="col-md-6">
-                                <label class="form-label">Option 2</label>
-                                <input type="text" class="form-control" formControlName="Option2">
-                            </div>
-                            <div class="col-md-6">
-                                <label class="form-label">Option 3</label>
-                                <input type="text" class="form-control" formControlName="Option3">
-                            </div>
-                            <div class="col-md-6">
-                                <label class="form-label">Option 4</label>
-                                <input type="text" class="form-control" formControlName="Option4">
-                            </div>
+                <div class="col-md-12">
+                    <label class="form-label text-success">Question</label>
+                    <input type="text" class="form-control" formControlName="QuestionName">
+                </div>
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label class="form-label">Option 1</label>
+                            <input type="text" class="form-control" formControlName="Option1">
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Option 2</label>
+                            <input type="text" class="form-control" formControlName="Option2">
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Option 3</label>
+                            <input type="text" class="form-control" formControlName="Option3">
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Option 4</label>
+                            <input type="text" class="form-control" formControlName="Option4">
                         </div>
                     </div>
-                    <div class="col-md-12">
-                        <div class="row">
-                            <div class="col-md-8">
-                                <label class="form-label">Right Answer</label>
-                                <select class="form-select" aria-label="Default select example" formControlName="Right_Answer"
-                                    (click)="pushToRightAnswer()">
-                                    <option *ngFor="let item of RightAnswer" value="{{item}}">{{item}}</option>
-                                </select>
-                            </div>
-                            <div class="col-md-4">
-                                <label class="form-label">Mark</label>
-                                <input type="number" class="form-control" formControlName="Mark">
-                            </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <label class="form-label">Right Answer</label>
+                            <select class="form-select" aria-label="Default select example"
+                                formControlName="Right_Answer" (click)="pushToRightAnswer()">
+                                <option *ngFor="let item of RightAnswer" value="{{item}}">{{item}}</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label">Mark</label>
+                            <input type="number" class="form-control" formControlName="Mark">
                         </div>
                     </div>
-                    <button class="btn btn-primary mt-3" *ngIf="!isEdit" (click)="QuestionformSubmit()">Add Question</button>
-                    <button class="btn btn-primary mt-3" *ngIf="isEdit" (click)="saveEditData()">Save</button>
-                </form>
-            </div>
-            
-            <div *ngIf="AllQuestion.length > 0">
-                <table class="table table-hover">
-                    <thead>
-                        <tr>
-                            <th>Question</th>
-                            <th>Option 1</th>
-                            <th>Option 2</th>
-                            <th>Option 3</th>
-                            <th>Option 4</th>
-                            <th>Right Answer</th>
-                            <th>Mark</th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody *ngFor="let item of AllQuestion">
-                        <tr>
-                            <td>{{item.QuestionName}}</td>
-                            <td>{{item.Option1}}</td>
-                            <td>{{item.Option2}}</td>
-                            <td>{{item.Option3}}</td>
-                            <td>{{item.Option4}}</td>
-                            <td>{{item.Right_Answer}}</td>
-                            <td>{{item.Mark}}</td>
-                            <td>
-                                <button class="btn btn-primary ms-3" (click)="EditItem(item)">Edit</button>
-                                <button class="btn btn-danger ms-3" (click)="DeleteItem(item)">Delete</button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            
-                <button class="btn btn-primary mt-3" (click)="PostData()">Save All</button>
-            </div>
+                </div>
+                <button class="btn btn-primary mt-3" *ngIf="!isEdit" (click)="QuestionformSubmit()">Add
+                    Question</button>
+                <button class="btn btn-primary mt-3" *ngIf="isEdit" (click)="saveEditData()">Save</button>
+            </form>
         </div>
+
+        <div *ngIf="AllQuestion.length > 0">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Question</th>
+                        <th>Option 1</th>
+                        <th>Option 2</th>
+                        <th>Option 3</th>
+                        <th>Option 4</th>
+                        <th>Right Answer</th>
+                        <th>Mark</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody *ngFor="let item of AllQuestion">
+                    <tr>
+                        <td>{{item.QuestionName}}</td>
+                        <td>{{item.Option1}}</td>
+                        <td>{{item.Option2}}</td>
+                        <td>{{item.Option3}}</td>
+                        <td>{{item.Option4}}</td>
+                        <td>{{item.Right_Answer}}</td>
+                        <td>{{item.Mark}}</td>
+                        <td>
+                            <button class="btn btn-primary ms-3" (click)="EditItem(item)">Edit</button>
+                            <button class="btn btn-danger ms-3" (click)="DeleteItem(item)">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <button class="btn btn-primary mt-3" (click)="PostData()">Save All</button>
+        </div>
+        <button class="btn btn-warning mt-3" (click)="backtopage()">Select Quiz</button>
     </div>
 </div>
+
+<a href="/QuizView" class="btn btn-warning mt-3 ms-5" style="width: fit-content;">Back</a>

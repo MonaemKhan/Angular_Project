@@ -1,0 +1,26 @@
+<div class="container my-5">
+    <h3>
+        <a href="/addquestion" class="btn btn-primary">Add New Quiz</a>
+    </h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Quiz Name</th>
+                <th>Total Question</th>
+                <th>Total Mark</th>
+                <th>Details</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of quiz_details">
+                <td>{{item.quizName}}</td>
+                <td>{{item.total_Question}}</td>
+                <td>{{item.number}}</td>
+                <td>
+                    <a [routerLink]="['/questionView',item.quizId]">View</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <a href="" class="btn btn-warning">Back</a>
+</div>

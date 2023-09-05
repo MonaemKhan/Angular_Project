@@ -1,0 +1,58 @@
+<div class="container">
+    <form [formGroup]="QuizForm">
+        <div>
+            <label class="form-label text-success">Quiz Name</label>
+            <select class="form-select" aria-label="Default select example" formControlName="quizId">
+                <option *ngFor="let item of allquizList" value="{{item.quizId}}">{{item.quizName}}</option>
+            </select>
+        </div>
+    </form>
+    <form [formGroup]="QuestionForm">
+        <div>
+            <input formControlName="questionId" hidden>
+        </div>
+        <div class="col-md-12">
+            <label class="form-label text-success">Question</label>
+            <input type="text" class="form-control" formControlName="questionName">
+        </div>
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-6">
+                    <label class="form-label">Option 1</label>
+                    <input type="text" class="form-control" formControlName="option1">
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label">Option 2</label>
+                    <input type="text" class="form-control" formControlName="option2">
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label">Option 3</label>
+                    <input type="text" class="form-control" formControlName="option3">
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label">Option 4</label>
+                    <input type="text" class="form-control" formControlName="option4">
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-8">
+                    <label class="form-label">Right Answer</label>
+                    <select class="form-select" aria-label="Default select example" formControlName="right_Answer" (click)="pushrightAnswer()">
+                        <option *ngFor="let item of RightAnswer" value="{{item}}">{{item}}</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label">Mark</label>
+                    <input type="number" class="form-control" formControlName="mark">
+                </div>
+            </div>
+        </div>
+        <div class="mt-3">
+            <a class="btn btn-success" (click)="updateQuestion()">Update</a>
+            <a class="btn btn-danger ms-3" (click)="deleteQuestion()">Delete</a>
+            <a class="btn btn-warning ms-3" (click)="backtopage()">Back</a>
+        </div>
+    </form>
+</div>

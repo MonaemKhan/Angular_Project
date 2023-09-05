@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { QuizViewComponent } from './quiz/quiz-view/quiz-view.component';
 
 const routes: Routes = [
   {

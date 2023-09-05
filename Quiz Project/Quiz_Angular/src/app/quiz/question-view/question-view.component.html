@@ -1,0 +1,36 @@
+<div class="container d-flex my-5 flex-wrap">
+    <div class="w-75">
+        <h1 class="text-center">{{quizName}} Quiz</h1>
+    </div>    
+    <div class="w-25">
+        <h6 style="text-align: right;">Question : {{quizQuestion}}</h6>
+        <h6 style="text-align: right;">Mark : {{quizNumber}}</h6>
+    </div>
+
+    <div class="w-100 my-3 p-3" *ngIf="hasdata">
+        <div *ngFor="let item of Question_Details">
+            <div class="d-flex">
+                <h6 class="w-75">{{item.questionName}}</h6>
+                <h6 class="w-25" style="text-align: right;">{{item.mark}}</h6>
+            </div>
+            <div class="d-flex flex-wrap">
+                <h6 class="w-50">A) {{item.option1}}</h6>
+                <h6 class="w-50">B) {{item.option2}}</h6>
+                <h6 class="w-50">C) {{item.option3}}</h6>
+                <h6 class="w-50">D) {{item.option4}}</h6>
+            </div>
+            <div class="d-flex">
+                <div class="w-75">Right Answer : <strong>{{item.right_Answer}}</strong></div>
+                <div class="w-25" style="text-align: right;">
+                    <a [routerLink]="['/editquestion',item.questionId,item.quizId]" class="btn btn-primary">Edit</a>
+                </div>
+            </div>
+            <hr>
+        </div>
+    </div>
+    <div class="w-100 my-3 p-3 text-danger" *ngIf="!hasdata">
+        **No Data To preview
+    </div>
+    <a href="/QuizView" class="btn btn-warning">Back</a> 
+</div>
+

@@ -11,10 +11,13 @@ export class QuizServiceService {
   url:string = 'https://localhost:7025/api/Quiz'
   constructor(private http:HttpClient) { }
 
-  getAllQuiz():Observable<Quiz[]>{
-    return this.http.get<Quiz[]>(this.url);
+  getAllQuiz():Observable<any>{
+    return this.http.get<any>(this.url);
   }
   postQuiz(data:Quiz):Observable<Quiz>{
     return this.http.post<Quiz>(this.url,data);
+  }
+  getQuiz(Id:number):Observable<any>{
+    return this.http.get<any>(`${this.url}/Id:int?Id=${Id}`);
   }
 }

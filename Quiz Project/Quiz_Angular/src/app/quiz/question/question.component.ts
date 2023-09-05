@@ -58,8 +58,8 @@ export class QuestionComponent implements OnInit {
 
     this._QuizId = parseInt(selectedValue);
     this._QuizName = selectedOptionText
-    console.log('Selected Value: ', this._QuizId);
-    console.log('Selected Option Text: ', this._QuizName);
+    // console.log('Selected Value: ', this._QuizId);
+    // console.log('Selected Option Text: ', this._QuizName);
     this.ShowDataEntry = true;
   }
 
@@ -132,11 +132,11 @@ export class QuestionComponent implements OnInit {
 
   QuestionformSubmit() {
     if (!this.QuestionForm.invalid && this.QuestionForm.value.Mark > 0) {
-      console.log(this._QuizId);
+      // console.log(this._QuizId);
       this.QuestionForm.value.QuizId = this._QuizId,
         this.QuestionForm.value.QuestionId = 0;
       this.AllQuestion.push(this.QuestionForm.value);
-      console.log(this.AllQuestion);
+      // console.log(this.AllQuestion);
       this.QuestionForm.reset();
     } else {
       console.log("Invalid");
@@ -151,7 +151,7 @@ export class QuestionComponent implements OnInit {
       this.QuestionService.postQuestion(item).subscribe(
         {
           next: (re) => {
-            console.log(re);
+            // console.log(re);
             this.AllQuestion = [];
           },
           error: (er) => {
@@ -160,6 +160,14 @@ export class QuestionComponent implements OnInit {
         }
       );
     }
+  }
+
+  backtopage(){
+    this.ShowDataEntry = false;
+  }
+
+  backtoQuiz(){
+
   }
 
 }
