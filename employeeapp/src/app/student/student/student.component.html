@@ -1,0 +1,49 @@
+<div *ngIf="userName!='' ;else loggedOut">
+    <div>
+        <nav class="navbar navbar-light bg-light">
+            <div class="container-fluid">
+              <a class="navbar-brand">This Is Navbar</a>
+              <div class="d-flex">
+                <a class="navbar-brand">{{userName}}</a>
+                <button class="btn btn-outline-success" (click)="LogOut()" >Log Out</button>
+              </div>
+            </div>
+          </nav>
+    </div>
+    <div class="container my-5">
+        <h3><a class="btn btn-primary" routerLink="/employees/add">Add New Employee</a></h3>
+        <table class="table table-hover" *ngIf="employee && employee.length>0">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Salary</th>
+                    <th>Depertment</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let emp of employee">
+                    <td>{{emp.id}}</td>
+                    <td>{{emp.name}}</td>
+                    <td>{{emp.email}}</td>
+                    <td>{{emp.phone}}</td>
+                    <td>{{emp.salary}}</td>
+                    <td>{{emp.department}}</td>
+                    <td *ngIf="userName == emp.name || userName == 'Super Admin'">
+                        <a class="btn btn-primary">Edit</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="text-danger" *ngIf="!employee || employee.length<=0">No Employee Found</p>
+    </div>
+</div>
+
+<ng-template #loggedOut>
+    <div class="text-danger">
+      <h1>Please friend, login First.</h1>
+    </div>
+  </ng-template>

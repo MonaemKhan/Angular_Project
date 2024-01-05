@@ -1,0 +1,12 @@
+.row {
+    width: auto;
+    background-color: rgb(60, 103, 178);
+    height: 100vh;
+
+}
+
+form {
+    margin-top: 10px;
+    padding: 20px;
+    background-color: rgb(15, 157, 88);
+}

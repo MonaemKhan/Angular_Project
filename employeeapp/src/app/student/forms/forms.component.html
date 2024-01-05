@@ -1,0 +1,77 @@
+<div class="container mt-5">
+    <div class="row">
+
+
+        <div class="col-4 offset-4">
+            <form [formGroup]="loginform" (ngSubmit)="datasubmit()">
+                <h1>LogIn Form</h1>
+                <div class="mt-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input formControlName="name" type="text" class="form-control" placeholder="Enter Name">
+                    <div *ngIf="
+           formvaluecontrol('name').invalid && 
+           (formvaluecontrol('name').dirty  ||
+            formvaluecontrol('name').touched)
+            " class="mt-2 text-warning">
+                        <div *ngIf="formvaluecontrol('name').errors?.['required']">
+                            Name is Required
+                        </div>
+                        <div *ngIf="formvaluecontrol('name').errors?.['minlength']">
+                            Min Length must be 5
+                        </div>
+                        <div *ngIf="formvaluecontrol('name').errors?.['maxlength']">
+                            Max Length must be 10
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="mt-3">
+                    <label for="Password" class="form-label">Password</label>
+                    <input formControlName="password" type="password" class="form-control" placeholder="Enter Password">
+
+                    <div *ngIf="
+           formvaluecontrol('password').invalid && 
+           (formvaluecontrol('password').dirty  ||
+            formvaluecontrol('password').touched)
+            " class="mt-2 text-warning">
+                        <div *ngIf="formvaluecontrol('password').errors?.['required']">
+                            Password is Required
+                        </div>
+                        <div *ngIf="formvaluecontrol('password').errors?.['minlength']">
+                            Min Length must be 5
+                        </div>
+                        <div *ngIf="formvaluecontrol('password').errors?.['maxlength']" class="mt-2 text-warning">
+                            Max Length must be 10
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+
+
+
+                <div class="mt-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input formControlName="email" type="email" class="form-control" placeholder="Enter Email">
+                    <div *ngIf="formvaluecontrol('email').errors?.['required']">
+                        Email is Required
+
+                    </div>
+                    <div *ngIf="formvaluecontrol('email').errors?.['email']" class="mt-2 text-warning">
+                        Please give valid email
+                    </div>
+                </div>
+                <div class="mt-2">
+                    <button type="submit" [disabled]="loginform.invalid" class="btn btn-danger"> Submit</button>
+                    <!-- click event + ng submit  -->
+                    <!-- [disabled] = "loginform.invalid" -->
+
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>
