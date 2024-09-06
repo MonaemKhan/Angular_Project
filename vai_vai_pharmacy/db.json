@@ -1,0 +1,267 @@
+{
+  "CompanyTable": [
+    {
+      "id": "1",
+      "CompanyName": "Square Pharmaceuticals Ltd."
+    },
+    {
+      "id": "2",
+      "CompanyName": "Incepta Pharmaceuticals Ltd."
+    },
+    {
+      "id": "3",
+      "CompanyName": "Beximco Pharmaceuticals Ltd."
+    },
+    {
+      "id": "4",
+      "CompanyName": "Renata Limited"
+    },
+    {
+      "id": "5",
+      "CompanyName": "Healthcare Pharmaceuticals Ltd."
+    },
+    {
+      "id": "6",
+      "CompanyName": "Eskayef Pharmaceuticals Ltd."
+    },
+    {
+      "id": "7",
+      "CompanyName": "ACI Limited"
+    },
+    {
+      "id": "8",
+      "CompanyName": "Aristopharma Ltd."
+    },
+    {
+      "id": "9",
+      "CompanyName": "Opsonin Pharma Ltd."
+    },
+    {
+      "id": "10",
+      "CompanyName": "Beacon Pharmaceuticals Ltd."
+    },
+    {
+      "id": "11",
+      "CompanyName": "Drug International Ltd."
+    },
+    {
+      "id": "12",
+      "CompanyName": "ACME Laboratories Ltd."
+    },
+    {
+      "id": "13",
+      "CompanyName": "Sun Pharmaceutical Ltd."
+    },
+    {
+      "id": "14",
+      "CompanyName": "Popular Pharmaceuticals Ltd."
+    },
+    {
+      "id": "15",
+      "CompanyName": "Novo Healthcare and Pharma Ltd."
+    },
+    {
+      "id": "16",
+      "CompanyName": "General Pharmaceuticals Ltd."
+    },
+    {
+      "id": "17",
+      "CompanyName": "Apex Pharma Ltd."
+    },
+    {
+      "id": "18",
+      "CompanyName": "Radiant Pharmaceuticals Ltd."
+    },
+    {
+      "id": "19",
+      "CompanyName": "Orion Pharma Ltd."
+    },
+    {
+      "id": "20",
+      "CompanyName": "Ziska Pharmaceuticals Ltd."
+    },
+    {
+      "id": "21",
+      "CompanyName": "Sanofi Bangladesh Ltd."
+    },
+    {
+      "id": "22",
+      "CompanyName": "Beximco Pharma Ltd."
+    },
+    {
+      "id": "23",
+      "CompanyName": "GSK Bangladesh Ltd."
+    },
+    {
+      "id": "24",
+      "CompanyName": "Labaid Pharmaceuticals Ltd."
+    },
+    {
+      "id": "25",
+      "CompanyName": "Medico Pharmaceuticals Ltd."
+    },
+    {
+      "id": "26",
+      "CompanyName": "The Acme Laboratories Ltd."
+    },
+    {
+      "id": "27",
+      "CompanyName": "SQUARE Pharmaceuticals Ltd."
+    },
+    {
+      "id": "28",
+      "CompanyName": "Bio Pharma Ltd."
+    },
+    {
+      "id": "29",
+      "CompanyName": "Siddiqsons Ltd."
+    },
+    {
+      "id": "30",
+      "CompanyName": "Progressive Pharmaceuticals Ltd."
+    },
+    {
+      "id": "31",
+      "CompanyName": "Square Toiletries Ltd."
+    },
+    {
+      "id": "32",
+      "CompanyName": "Independence Pharmaceuticals Ltd."
+    },
+    {
+      "id": "33",
+      "CompanyName": "Allied Pharmaceuticals Ltd."
+    },
+    {
+      "id": "34",
+      "CompanyName": "Neptune Pharmaceuticals Ltd."
+    },
+    {
+      "id": "35",
+      "CompanyName": "Medtronic Bangladesh Ltd."
+    },
+    {
+      "id": "36",
+      "CompanyName": "Wockhardt Ltd."
+    },
+    {
+      "id": "37",
+      "CompanyName": "United Pharmaceuticals Ltd."
+    },
+    {
+      "id": "38",
+      "CompanyName": "Health & Life Ltd."
+    },
+    {
+      "id": "39",
+      "CompanyName": "GMP Pharmaceuticals Ltd."
+    },
+    {
+      "id": "40",
+      "CompanyName": "Ravi Pharmaceuticals Ltd."
+    },
+    {
+      "id": "41",
+      "CompanyName": "GlaxoSmithKline Bangladesh Ltd."
+    },
+    {
+      "id": "42",
+      "CompanyName": "Eastern Pharmaceuticals Ltd."
+    },
+    {
+      "id": "43",
+      "CompanyName": "Fresenius Kabi Ltd."
+    },
+    {
+      "id": "44",
+      "CompanyName": "GPI Ltd."
+    },
+    {
+      "id": "45",
+      "CompanyName": "Indo-Bangla Pharmaceuticals Ltd."
+    },
+    {
+      "id": "46",
+      "CompanyName": "Galenica Ltd."
+    },
+    {
+      "id": "47",
+      "CompanyName": "Cipla Ltd."
+    }
+  ],
+  "MedicineCatagoryTable": [
+    {
+      "id": "1",
+      "MedicineCatagoryName": "Tablet"
+    },
+    {
+      "id": "2",
+      "MedicineCatagoryName": "Capsule"
+    },
+    {
+      "id": "3",
+      "MedicineCatagoryName": "Liquid"
+    },
+    {
+      "id": "4",
+      "MedicineCatagoryName": "Injection"
+    }
+  ],
+  "StrengthTable": [
+    {
+      "id": "1",
+      "StrengthName": "5 mg"
+    },
+    {
+      "id": "2",
+      "StrengthName": "10 mg"
+    },
+    {
+      "id": "3",
+      "StrengthName": "100 mg"
+    },
+    {
+      "id": "4",
+      "StrengthName": "500 mg"
+    },
+    {
+      "id": "5",
+      "StrengthName": "1000 mg"
+    }
+  ],
+  "MadecineDetailsTable": [
+    {
+      "id": "0",
+      "MedicineName": "",
+      "MedicineCatagory": "",
+      "MedicineGenericName": "",
+      "CompanyName": "",
+      "strangth": "",
+      "SideEffect": "",
+      "Consumer": "",
+      "ConsumeType": ""
+    },
+    {
+      "id": 1,
+      "MedicineName": "fkjvnjdv",
+      "MedicineCatagory": "Tablet",
+      "MedicineGenericName": "vvdsvsv",
+      "CompanyName": "Beacon Pharmaceuticals Ltd.",
+      "strangth": "5 mg",
+      "SideEffect": "",
+      "Consumer": "Adult",
+      "ConsumeType": "Oral"
+    },
+    {
+      "id": 2,
+      "MedicineName": "fkjvnjdv",
+      "MedicineCatagory": "Tablet",
+      "MedicineGenericName": "vvdsvsv",
+      "CompanyName": "Beacon Pharmaceuticals Ltd.",
+      "strangth": "5 mg",
+      "SideEffect": "",
+      "Consumer": "Adult",
+      "ConsumeType": "Oral"
+    }
+  ]
+}

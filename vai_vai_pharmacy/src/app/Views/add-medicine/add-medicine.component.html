@@ -1,0 +1,71 @@
+<div class="container">
+    <form (ngSubmit)="onSubmit()">
+
+        <!-- Medicine Id Input -->
+        <div class="form-group">
+            <label for="MedicineId">Medicine Id</label>
+            <input type="text" id="MedicineId" [(ngModel)]="medicine.id" name="MedicineId">
+        </div>
+
+        <!-- Medicine Name Input -->
+        <div class="form-group">
+            <label for="MedicineName">Medicine Name</label>
+            <input type="text" id="MedicineName" [(ngModel)]="medicine.MedicineName" name="MedicineName">
+        </div>
+
+        <!-- Medicine Category dropdown -->
+        <div class="form-group">
+            <label for="Dose">Medicine Catagory</label>
+            <select id="Dose" [(ngModel)]="medicine.MedicineCatagory" name="Dose">
+                <option *ngFor="let dose of medicineCatagoryList" [value]="dose.MedicineCatagoryName">{{
+                    dose.MedicineCatagoryName }}</option>
+            </select>
+        </div>
+
+        <!-- Medicine Generic Name Input -->
+        <div class="form-group">
+            <label for="MedicineGenericName">Medicine Generic Name</label>
+            <input type="text" id="MedicineGenericName" [(ngModel)]="medicine.MedicineGenericName"
+                name="MedicineGenericName">
+        </div>
+
+        <!-- Company Name with Auto-suggest -->
+        <div class="form-group">
+            <label for="CompanyName">Company Name</label>
+            <input type="text" id="CompanyName" [(ngModel)]="medicine.CompanyName" name="CompanyName"
+                (input)="filterCompanyList()">
+            <ul *ngIf="isfilteredCompanyListShow" class="suggestions">
+                <li *ngFor="let company of filteredCompanyList" (click)="selectCompany(company.CompanyName)"
+                    (focusout)="selctCompanyListFocusout()">{{ company.CompanyName }}</li>
+            </ul>
+        </div>
+
+        <!-- Strangth Dropdown -->
+        <div class="form-group">
+            <label for="Strangth">Strangth</label>
+            <select id="Strangth" [(ngModel)]="medicine.strangth" name="Strangth">
+                <option *ngFor="let strength of strangthList" [value]="strength.StrengthName">{{ strength.StrengthName
+                    }}</option>
+            </select>
+        </div>
+
+        <!-- Consumer Dropdown -->
+        <div class="form-group">
+            <label for="Consumer">Consumer</label>
+            <select id="Consumer" [(ngModel)]="medicine.Consumer" name="Consumer">
+                <option *ngFor="let consumer of consumers" [value]="consumer">{{ consumer }}</option>
+            </select>
+        </div>
+
+        <!-- Consume Type Dropdown -->
+        <div class="form-group">
+            <label for="ConsumeType">Consume Type</label>
+            <select id="ConsumeType" [(ngModel)]="medicine.ConsumeType" name="ConsumeType">
+                <option *ngFor="let consumeType of consumeTypes" [value]="consumeType">{{ consumeType }}</option>
+            </select>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit">Submit</button>
+    </form>
+</div>

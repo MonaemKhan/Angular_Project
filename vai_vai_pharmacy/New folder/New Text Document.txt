@@ -1,0 +1,7 @@
+mkdir json-server-controller
+cd json-server-controller
+npm init -y
+npm install express json-server body-parser
+
+
+
